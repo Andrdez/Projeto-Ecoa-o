@@ -1,0 +1,141 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: whitesmoke;
+  color: black;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px gray;
+  border-radius: 10px;
+  box-shadow: 0px 5px 13px 6px rgb(141, 137, 137);
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+ 
+header nav a {
+  font-weight: 600;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+ 
+header nav a:hover,
+header nav a.active {
+  color: rgb(34, 139, 34);
+  border-bottom-color: rgb(34, 139, 34);
+}
+
+.cerebro button{
+  height: 40px;
+  background-color: #68a624;
+  font-family: monospace;
+  border-radius: 10px;
+  border: 0px;
+  text-transform: uppercase;
+}
+
+h1, h2, p, a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-foto p{
+  justify-content: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  flex-wrap: wrap;
+}
+ 
+.hero-foto .subtitulo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+ 
+.hero-foto .texto {
+  color: rgb(70, 70, 70);
+}
+ 
+.hero-botoes {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  background-color: #ffffff;
+  border: 1px solid #e3ddce;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: box;
+  box-shadow: 0px 5px 13px 6px rgba(141, 137, 137, 0.25);
+  transition: transform 0.2s ease;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: flex-end;
+}
+
+.cards2 {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+ 
+.cards2-conteudo {
+  background-color: #ffffff;
+  border: 1px solid #e3ddce;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0px 5px 13px 6px rgba(141, 137, 137, 0.25);
+}
+ 
+.cards2-conteudo p {
+  max-width: 600px;
+  margin: 12px auto 24px;
+}
+
+footer{
+  background-color: white;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  box-shadow: 0px 5px 13px 6px rgb(141, 137, 137);
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
