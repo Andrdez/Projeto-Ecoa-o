@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html" class="active">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html">Voluntariado</a>
+            <a href="../rotas/rotas.html">Rotas</a>
+        </nav>
+
+        <!-- Visitantes veem Entrar/Cadastrar; o JavaScript troca por "Olá, nome" + Sair -->
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="comunidade-topo">
+            <span class="etiqueta"><i class="bi bi-people" aria-hidden="true"></i> Juntos somos mais fortes</span>
+            <h1>Comunidade <span>EcoAção</span></h1>
+            <p>Compartilhe ideias, tire dúvidas e conecte-se com pessoas que também querem um futuro mais sustentável.</p>
+        </section>
+
+        <div class="comunidade-layout">
+            <section class="comunidade-feed" aria-label="Publicações da comunidade">
+
+                <div class="aviso" id="mensagem" role="alert" hidden></div>
+
+                <!-- Formulário: só aparece para quem está logado -->
+                <form class="nova-publicacao" id="form-post" hidden>
+                    <div class="nova-publicacao-topo">
+                        <div class="avatar" aria-hidden="true"><i class="bi bi-person"></i></div>
+                        <div class="nova-publicacao-campos">
+                            <input type="text" id="titulo-post" maxlength="100" placeholder="Título (opcional)" aria-label="Título da publicação (opcional)">
+                            <textarea id="texto-post" maxlength="1000" placeholder="Compartilhe uma dica, dúvida ou ideia com a comunidade..." aria-label="Escreva sua publicação" required></textarea>
+                        </div>
+                    </div>
+                    <div class="nova-publicacao-rodape">
+                        <span></span>
+                        <button type="submit" class="botao botao-principal">
+                            <i class="bi bi-send" aria-hidden="true"></i> Publicar
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Aviso para visitantes -->
+                <p class="sem-posts" id="aviso-visitante" hidden>
+                    Quer participar da conversa? <a href="../login/login.html"><strong>Entre</strong></a> ou
+                    <a href="../cadastro/cadastro.html"><strong>cadastre-se</strong></a> para publicar.
+                </p>
+
+                <div class="lista-posts" id="lista-posts">
+                    <p class="sem-posts">Carregando publicações...</p>
+                </div>
+            </section>
+
+            <aside class="comunidade-lateral" aria-label="Informações da comunidade">
+                <div class="painel">
+                    <h2><i class="bi bi-shield-check" aria-hidden="true"></i> Regras da comunidade</h2>
+                    <ul class="lista-regras">
+                        <li><i class="bi bi-check-circle" aria-hidden="true"></i> Respeite todas as pessoas.</li>
+                        <li><i class="bi bi-check-circle" aria-hidden="true"></i> Compartilhe informações confiáveis.</li>
+                        <li><i class="bi bi-check-circle" aria-hidden="true"></i> Não faça spam nem propaganda.</li>
+                        <li><i class="bi bi-check-circle" aria-hidden="true"></i> Ajude quem está começando.</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <section class="secao banner-final">
+            <img class="banner-folha" src="../imagens/folha.png" alt="">
+            <div class="banner-final-texto">
+                <p>Toda mudança começa com uma pequena ação.</p>
+                <h2>Faça parte da <span>comunidade</span>!</h2>
+            </div>
+            <img class="banner-mascote" src="../imagens/rato1.png" alt="Mascote do EcoAção">
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>EcoAção — pequenas atitudes, grandes transformações.</p>
+    </footer>
+
+    <script src="../comum/comum.js"></script>
+    <script src="comunidade.js"></script>
+</body>
+</html>

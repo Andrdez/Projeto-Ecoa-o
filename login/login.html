@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — EcoAção</title>
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body class="pagina-auth">
+
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+        <p>Entre na sua conta</p>
+
+        <form id="form-login">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Digite seu e-mail" autocomplete="email" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha"
+                   placeholder="Digite sua senha" autocomplete="current-password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <div class="aviso" id="mensagem" role="alert" hidden></div>
+
+        <p class="link">
+            Não tem uma conta?
+            <a href="../cadastro/cadastro.html">Cadastre-se</a>
+            <br>
+            <a href="../index/index.html" class="voltar">Voltar</a>
+        </p>
+    </div>
+
+    <script src="../comum/comum.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

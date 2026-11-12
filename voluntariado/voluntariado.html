@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariado — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html" class="active">Voluntariado</a>
+            <a href="../rotas/rotas.html">Rotas</a>
+        </nav>
+
+        <!-- Visitantes veem Entrar/Cadastrar; o JavaScript troca por "Olá, nome" + Sair -->
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pagina-topo">
+            <span class="etiqueta"><i class="bi bi-heart" aria-hidden="true"></i> Faça a diferença</span>
+            <h1>Voluntariado <span>EcoAção</span></h1>
+            <p>Encontre ações de ONGs parceiras e participe de iniciativas que cuidam do meio ambiente e da sua cidade.</p>
+            <a class="botao botao-principal" id="atalho-painel" href="../minhas-vagas/minhas-vagas.html" hidden>
+                <i class="bi bi-clipboard-check" aria-hidden="true"></i> Gerenciar vagas
+            </a>
+        </section>
+
+        <div class="pagina-corpo empilhado">
+            <div class="aviso" id="mensagem" role="alert" hidden></div>
+
+            <div class="grade-vagas" id="lista-vagas">
+                <p class="sem-posts">Carregando vagas...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>EcoAção — pequenas atitudes, grandes transformações.</p>
+    </footer>
+
+    <script src="../comum/comum.js"></script>
+    <script src="voluntariado.js"></script>
+</body>
+</html>
