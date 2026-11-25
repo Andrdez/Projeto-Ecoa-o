@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTown - Missão Reciclagem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ECOAÇÃO APRESENTA</p>
+        <h1>EcoTown <span>🌱</span></h1>
+      </div>
+      <p class="subtitle">Uma cidade mais limpa começa com você!</p>
+    </header>
+
+    <section class="hud" aria-label="Informações do jogo">
+      <div class="hud-item"><span>⭐ Pontos</span><strong id="score">0</strong></div>
+      <div class="hud-item"><span>❤️ Vidas</span><strong id="lives">3</strong></div>
+      <div class="hud-item carrying"><span>🧺 Carregando</span><strong id="carrying">Nada</strong></div>
+      <div class="hud-item"><span>♻️ Restam</span><strong id="remaining">12</strong></div>
+    </section>
+
+    <div class="game-area">
+      <canvas id="game" width="900" height="600" aria-label="Jogo EcoTown"></canvas>
+      <div id="overlay" class="overlay">
+        <div class="overlay-card">
+          <div class="big-icon">🐭</div>
+          <h2 id="overlay-title">Bem-vindo a EcoTown!</h2>
+          <p id="overlay-text">A cidade está cheia de lixo! Recolha os resíduos e leve cada um até a lixeira correta. Cuidado com o urubu!</p>
+          <button id="start-btn">Começar jogo</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="instructions">
+      <p><b>Movimentar:</b> WASD ou setas</p>
+      <p><b>Recolher / descartar:</b> Espaço</p>
+      <p><b>Objetivo:</b> entregue todos os 12 resíduos e fuja do urubu!</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
