@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html" class="active">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html">Voluntariado</a>
+            <a href="../rotas/rotas.html">Rotas</a>
+        </nav>
+
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main id="telaInicial">
+        <div class="conteudo-inicial">
+            <h1>EcoMissão</h1>
+            <h2>Missão Reciclagem</h2>
+
+            <p>Ajude a salvar o planeta!</p>
+
+            <img src="../imagens/mascote.png" alt="Mascote do EcoMissão" id="mascote" width="150" height="150">
+
+            <div class="botoes-iniciais">
+                <button id="botaoJogar">JOGAR</button>
+                <button id="botaoInstrucoes">COMO JOGAR</button>
+            </div>
+
+            <div id="instrucoes" hidden>
+                <p>Você tem 2 minutos para reciclar os objetos!</p>
+                <p>Arraste o lixo com o mouse e clique na lixeira correta.</p>
+                <p>Cuidado! Você tem apenas 3 vidas.</p>
+                <button id="botaoFechar">VOLTAR</button>
+            </div>
+        </div>
+    </main>
+
+    <canvas id="meuCanvas" width="1200" height="850" hidden></canvas>
+
+    <script src="jogos.js"></script>
+    <script src="../comum/comum.js"></script>
+    <script>iniciarPagina();</script>
+</body>
+</html>

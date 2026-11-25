@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas vagas — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html">Voluntariado</a>
+            <a href="../rotas/rotas.html">Rotas</a>
+        </nav>
+
+        <!-- Visitantes veem Entrar/Cadastrar; o JavaScript troca por "Olá, nome" + Sair -->
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pagina-topo">
+            <span class="etiqueta"><i class="bi bi-building" aria-hidden="true"></i> Painel da ONG</span>
+            <h1 id="titulo-pagina">Minhas <span>vagas</span></h1>
+            <p id="subtitulo-pagina">Crie, edite e acompanhe as vagas de voluntariado da sua organização.</p>
+        </section>
+
+        <div class="pagina-corpo empilhado">
+            <div class="aviso" id="mensagem" role="alert" hidden></div>
+
+            <!-- Só aparece para ONG e admin (liberado pelo JavaScript) -->
+            <div class="empilhado" id="conteudo" hidden>
+                <form class="form-painel" id="form-vaga">
+                    <h2 id="titulo-form"><i class="bi bi-plus-circle" aria-hidden="true"></i> Nova vaga</h2>
+                    <input type="hidden" id="id_vaga">
+
+                    <div class="form-grade">
+                        <div class="campo campo-largo">
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" maxlength="120" placeholder="Ex.: Mutirão de limpeza" required>
+                        </div>
+
+                        <div class="campo campo-largo">
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" maxlength="1000" placeholder="Explique o que será feito e o que o voluntário deve levar" required></textarea>
+                        </div>
+
+                        <div class="campo">
+                            <label for="localizacao">Local</label>
+                            <input type="text" id="localizacao" maxlength="150" placeholder="Endereço ou nome do local" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="data_vaga">Data</label>
+                            <input type="date" id="data_vaga" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="horario">Horário (opcional)</label>
+                            <input type="time" id="horario">
+                        </div>
+
+                        <div class="campo">
+                            <label for="num_vagas">Número de vagas</label>
+                            <input type="number" id="num_vagas" min="1" max="1000" placeholder="Ex.: 20" required>
+                        </div>
+                    </div>
+
+                    <div class="form-botoes">
+                        <button type="submit" class="botao botao-principal" id="botao-salvar">Criar vaga</button>
+                        <button type="button" class="botao botao-secundario" id="cancelar-edicao" hidden>Cancelar edição</button>
+                    </div>
+                </form>
+
+                <div class="grade-vagas" id="lista-vagas"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>EcoAção — pequenas atitudes, grandes transformações.</p>
+    </footer>
+
+    <script src="../comum/comum.js"></script>
+    <script src="minhas-vagas.js"></script>
+</body>
+</html>
