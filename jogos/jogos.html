@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+    <style>
+        .jogos-topo { width:min(1200px,calc(100% - 48px)); margin:0 auto; padding:52px 0 24px; text-align:center; }
+        .jogos-topo h1 { margin:0; color:var(--verde-escuro); font-size:clamp(2.2rem,4vw,3.3rem); font-weight:900; }
+        .jogos-topo p { max-width:680px; margin:12px auto 0; }
+        .jogos-escolha { width:min(1100px,calc(100% - 48px)); margin:0 auto 30px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+        .jogo-card { padding:24px; background:#fff; border:1px solid var(--borda); border-radius:18px; box-shadow:var(--sombra); display:flex; flex-direction:column; align-items:flex-start; }
+        .jogo-card .jogo-icone { width:58px;height:58px;display:grid;place-items:center;border-radius:15px;background:var(--verde-suave);color:var(--verde);font-size:1.8rem; }
+        .jogo-card h2 { margin:14px 0 6px;color:var(--verde-escuro);font-size:1.45rem; }
+        .jogo-card p { margin:0 0 18px; }
+        .jogo-card .botao { margin-top:auto; }
+        .area-jogo { width:min(1200px,calc(100% - 48px)); margin:0 auto 45px; }
+        .area-jogo[hidden] { display:none; }
+        .area-jogo-topo { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:14px; flex-wrap:wrap; }
+        .area-jogo-topo h2 { margin:0;color:var(--verde-escuro);font-size:1.5rem; }
+        .jogo-frame { display:block;width:100%;height:850px;border:1px solid var(--borda);border-radius:16px;background:#fbf8ef; }
+        .jogo-frame.ecotown-frame { height:760px; }
+        .dica-jogos { margin:0 auto 35px;width:min(1100px,calc(100% - 48px));padding:17px 20px;background:#edf4e7;border-radius:14px;color:var(--verde-escuro); }
+        @media(max-width:700px) {
+            .jogos-escolha { grid-template-columns:1fr; }
+            .jogo-frame { height:780px; }
+            .jogo-frame.ecotown-frame { height:650px; }
+            .jogos-topo,.area-jogo,.jogos-escolha,.dica-jogos { width:calc(100% - 28px); }
+        }
+    </style>
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html" class="active">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html">Voluntariado</a>
+            <a href="../rotas/rotas.html">Rotas</a>
+        </nav>
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="jogos-topo">
+            <span class="etiqueta"><i class="bi bi-controller"></i> Aprender brincando</span>
+            <h1>Jogos EcoAção</h1>
+            <p>Escolha uma missão e pratique seus conhecimentos sobre reciclagem e cuidado com o meio ambiente.</p>
+        </section>
+
+        <section class="jogos-escolha" aria-label="Escolha um jogo">
+            <article class="jogo-card">
+                <div class="jogo-icone"><i class="bi bi-recycle"></i></div>
+                <h2>EcoMissão: Missão Reciclagem</h2>
+                <p>Identifique diferentes resíduos e coloque cada objeto na lixeira correta. Você tem tempo limitado e três vidas para completar o desafio.</p>
+                <button class="botao botao-principal" type="button" data-jogo="ecomissao">Jogar EcoMissão</button>
+            </article>
+            <article class="jogo-card">
+                <div class="jogo-icone"><i class="bi bi-tree"></i></div>
+                <h2>EcoTown</h2>
+                <p>Explore uma cidade, recolha os resíduos espalhados e leve cada um até a lixeira correspondente. Mas cuidado com o urubu!</p>
+                <button class="botao botao-principal" type="button" data-jogo="ecotown">Jogar EcoTown</button>
+            </article>
+        </section>
+
+        <p class="dica-jogos"><strong>Dica:</strong> os dois jogos ensinam a reconhecer materiais recicláveis e a importância de fazer o descarte correto.</p>
+
+        <section class="area-jogo" id="area-ecomissao" hidden>
+            <div class="area-jogo-topo">
+                <h2>EcoMissão — Missão Reciclagem</h2>
+                <button class="botao botao-secundario" type="button" data-voltar>Voltar aos jogos</button>
+            </div>
+            <iframe class="jogo-frame" src="ecomissao.html" title="Jogo EcoMissão" loading="lazy"></iframe>
+        </section>
+
+        <section class="area-jogo" id="area-ecotown" hidden>
+            <div class="area-jogo-topo">
+                <h2>EcoTown</h2>
+                <button class="botao botao-secundario" type="button" data-voltar>Voltar aos jogos</button>
+            </div>
+            <iframe class="jogo-frame ecotown-frame" src="ecotown/index.html" title="Jogo EcoTown" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer class="rodape"><p>EcoAção — pequenas atitudes transformam o futuro.</p></footer>
+
+    <script>
+        const selecao = document.querySelector('.jogos-escolha');
+        const dica = document.querySelector('.dica-jogos');
+        const secoes = {
+            ecomissao: document.getElementById('area-ecomissao'),
+            ecotown: document.getElementById('area-ecotown')
+        };
+        document.querySelectorAll('[data-jogo]').forEach(botao => {
+            botao.addEventListener('click', () => {
+                selecao.hidden = true;
+                dica.hidden = true;
+                Object.values(secoes).forEach(secao => secao.hidden = true);
+                secoes[botao.dataset.jogo].hidden = false;
+                secoes[botao.dataset.jogo].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        document.querySelectorAll('[data-voltar]').forEach(botao => {
+            botao.addEventListener('click', () => {
+                Object.values(secoes).forEach(secao => secao.hidden = true);
+                selecao.hidden = false;
+                dica.hidden = false;
+                selecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+    <script src="../comum/comum.js"></script>
+    <script>iniciarPagina();</script>
+</body>
+</html>

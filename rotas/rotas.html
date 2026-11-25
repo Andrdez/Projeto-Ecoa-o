@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotas de coleta — EcoAção</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style1.css">
+</head>
+<body>
+    <header class="cerebro">
+        <a class="logo" href="../index/index.html" aria-label="EcoAção - Início">
+            <img src="../imagens/Logo.png" alt="Logo EcoAção">
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="../index/index.html">Início</a>
+            <a href="../informacao/informacao.html">Informativo</a>
+            <a href="../jogos/jogos.html">Jogos</a>
+            <a href="../projetos/projetos.html">Projetos</a>
+            <a href="../comunidade/comunidade.html">Comunidade</a>
+            <a href="../voluntariado/voluntariado.html">Voluntariado</a>
+            <a href="../rotas/rotas.html" class="active">Rotas</a>
+        </nav>
+
+        <!-- Visitantes veem Entrar/Cadastrar; o JavaScript troca por "Olá, nome" + Sair -->
+        <div class="acoes-conta" id="acoes-conta">
+            <a href="../login/login.html" class="botao botao-secundario">Entrar</a>
+            <a href="../cadastro/cadastro.html" class="botao botao-principal">Cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pagina-topo">
+            <span class="etiqueta"><i class="bi bi-truck" aria-hidden="true"></i> Coleta de lixo</span>
+            <h1>Rotas de <span>coleta</span></h1>
+            <p>Descubra quando o caminhão passa no seu bairro e separe cada tipo de resíduo no dia certo.</p>
+        </section>
+
+        <div class="pagina-corpo empilhado">
+            <div class="aviso" id="mensagem" role="alert" hidden></div>
+
+            <!-- Filtros -->
+            <div class="filtros-rotas">
+                <div class="campo">
+                    <label for="filtro-bairro">Bairro</label>
+                    <select id="filtro-bairro">
+                        <option value="">Todos os bairros</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="filtro-tipo">Tipo de coleta</label>
+                    <select id="filtro-tipo">
+                        <option value="">Todos os tipos</option>
+                        <option value="organico">Orgânico</option>
+                        <option value="reciclavel">Reciclável</option>
+                        <option value="seletiva">Seletiva</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tabela de rotas -->
+            <div class="tabela-caixa">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Bairro</th>
+                            <th>Tipo de coleta</th>
+                            <th>Dia da semana</th>
+                            <th>Horário</th>
+                            <th>Ponto de referência</th>
+                            <th id="coluna-acoes" hidden>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <tr><td colspan="5" class="tabela-vazia">Carregando rotas...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Só o admin vê este formulário (liberado pelo JavaScript) -->
+            <form class="form-painel" id="form-rota" hidden>
+                <h2 id="titulo-form"><i class="bi bi-plus-circle" aria-hidden="true"></i> Nova rota</h2>
+                <input type="hidden" id="id_rota">
+
+                <div class="form-grade">
+                    <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" maxlength="100" placeholder="Ex.: Centro" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipo_coleta">Tipo de coleta</label>
+                        <select id="tipo_coleta" required>
+                            <option value="organico">Orgânico</option>
+                            <option value="reciclavel">Reciclável</option>
+                            <option value="seletiva">Seletiva</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dia_semana">Dia da semana</label>
+                        <select id="dia_semana" required>
+                            <option>Segunda-feira</option>
+                            <option>Terça-feira</option>
+                            <option>Quarta-feira</option>
+                            <option>Quinta-feira</option>
+                            <option>Sexta-feira</option>
+                            <option>Sábado</option>
+                            <option>Domingo</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="horario">Horário</label>
+                        <input type="time" id="horario" required>
+                    </div>
+
+                    <div class="campo campo-largo">
+                        <label for="ponto_referencia">Ponto de referência</label>
+                        <input type="text" id="ponto_referencia" maxlength="150" placeholder="Ex.: Em frente à praça central" required>
+                    </div>
+                </div>
+
+                <div class="form-botoes">
+                    <button type="submit" class="botao botao-principal" id="botao-salvar">Cadastrar rota</button>
+                    <button type="button" class="botao botao-secundario" id="cancelar-edicao" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>EcoAção — pequenas atitudes, grandes transformações.</p>
+    </footer>
+
+    <script src="../comum/comum.js"></script>
+    <script src="rotas.js"></script>
+</body>
+</html>
